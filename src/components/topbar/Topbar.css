@@ -6,6 +6,7 @@
   align-items: center;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .topbarLeft {
@@ -42,7 +43,7 @@
 
 .searchInput {
   border: none;
-  width: 90%;
+  width: 80%;
 }
 
 .searchInput:focus {
