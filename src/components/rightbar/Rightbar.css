@@ -110,3 +110,21 @@
   border-radius: 5px;
   object-fit: cover;
 }
+
+.promotionTitle {
+  font-weight: 550;
+  margin-bottom: -10px;
+  margin-top: 20px;
+}
+
+.rightbarPromotionImg {
+  width: 85%;
+  border-radius: 10px;
+  margin: 25px 0;
+}
+
+.promotionName {
+  font-size: small;
+  color: #444040;
+  margin-top: -20px;
+}

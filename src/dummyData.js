@@ -2,27 +2,27 @@ export const Users = [
   {
     id: 1,
     profilePicture: "assets/person/1.jpeg",
-    username: "田中",
+    username: "ShinCode",
   },
   {
     id: 2,
     profilePicture: "assets/person/2.jpeg",
-    username: "鈴木",
+    username: "Yamaki",
   },
   {
     id: 3,
     profilePicture: "assets/person/3.jpeg",
-    username: "佐藤",
+    username: "Koga",
   },
   {
     id: 4,
     profilePicture: "assets/person/4.jpeg",
-    username: "斎藤",
+    username: "Matukubo",
   },
   {
     id: 5,
     profilePicture: "assets/person/5.jpeg",
-    username: "菊川",
+    username: "Kikukawa",
   },
 ];
 

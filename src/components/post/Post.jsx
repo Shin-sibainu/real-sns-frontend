@@ -44,12 +44,6 @@ export default function Post({ post }) {
           <div className="postBottomLeft">
             <img
               className="likeIcon"
-              src="assets/like.png"
-              alt=""
-              onClick={() => handleLike()}
-            />
-            <img
-              className="likeIcon"
               src="assets/heart.png"
               alt=""
               onClick={() => handleLike()}

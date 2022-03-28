@@ -43,12 +43,20 @@
   justify-content: space-between;
 }
 
+.loginMsg {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 20px;
+  font-weight: 550;
+}
+
 .loginInput {
   height: 50px;
   border-radius: 10px;
   border: 1px solid gray;
   font-size: 18px;
   padding-left: 20px;
+  margin-bottom: 5px;
 }
 
 .loginInput:focus {
@@ -76,6 +84,7 @@
   align-self: center;
   height: 50px;
   border-radius: 10px;
+  margin-top: 5px;
   border: none;
   background-color: #3c8b50;
   color: white;
