@@ -1,4 +1,14 @@
-import { EmojiEmotions, Label, PermMedia, Room } from "@mui/icons-material";
+import {
+  Analytics,
+  Bolt,
+  EmojiEmotions,
+  Face,
+  Gif,
+  Image,
+  Label,
+  PermMedia,
+  Room,
+} from "@mui/icons-material";
 import React from "react";
 import "./Share.css";
 
@@ -18,20 +28,20 @@ export default function Share() {
         <div className="shareButtons">
           <div className="shareOptions">
             <div className="shareOption">
-              <PermMedia htmlColor="tomato" className="shareIcon" />
+              <Image className="shareIcon" />
               <span className="shareOptionText">写真</span>
             </div>
             <div className="shareOption">
-              <Label htmlColor="blue" className="shareIcon" />
-              <span className="shareOptionText">タグ</span>
+              <Gif className="shareIcon" />
+              <span className="shareOptionText">GIF</span>
             </div>
             <div className="shareOption">
-              <Room htmlColor="green" className="shareIcon" />
-              <span className="shareOptionText">場所</span>
-            </div>
-            <div className="shareOption">
-              <EmojiEmotions htmlColor="goldenrod" className="shareIcon" />
+              <Face className="shareIcon" />
               <span className="shareOptionText">気持ち</span>
+            </div>
+            <div className="shareOption">
+              <Analytics className="shareIcon" />
+              <span className="shareOptionText">投票</span>
             </div>
           </div>
           <button className="shareButton">投稿</button>

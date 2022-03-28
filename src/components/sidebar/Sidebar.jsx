@@ -1,4 +1,17 @@
-import { RssFeed } from "@mui/icons-material";
+import {
+  Bookmark,
+  Home,
+  Message,
+  MessageRounded,
+  NotificationAdd,
+  NotificationAddOutlined,
+  Notifications,
+  Person,
+  RssFeed,
+  Search,
+  SearchOutlined,
+  Settings,
+} from "@mui/icons-material";
 import React from "react";
 import "./Sidebar.css";
 import { Users } from "../../dummyData";
@@ -10,31 +23,34 @@ export default function Sidebar() {
       <div className="sidebarWrapper">
         <ul className="sidebarList">
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <Home className="sidebarIcon" />
+            <span className="sidebarListItemText">ホーム</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <Search className="sidebarIcon" />
+            <span className="sidebarListItemText">検索</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <Notifications className="sidebarIcon" />
+            <span className="sidebarListItemText">通知</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <MessageRounded className="sidebarIcon" />
+            <span className="sidebarListItemText">メッセージ</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <Bookmark className="sidebarIcon" />
+            <span className="sidebarListItemText">ブックマーク</span>
           </li>
           <li className="sidebarListItem">
-            <RssFeed className="sidebarIcon" />
-            <span className="sidebarListItemText">Feed</span>
+            <Person className="sidebarIcon" />
+            <span className="sidebarListItemText">プロフィール</span>
+          </li>
+          <li className="sidebarListItem">
+            <Settings className="sidebarIcon" />
+            <span className="sidebarListItemText">設定</span>
           </li>
         </ul>
-        <button className="sidebarButton">もっと見る</button>
         <hr className="sidebarHr" />
         <ul className="sidebarFriendList">
           {/* <li className="sidebarFriend">

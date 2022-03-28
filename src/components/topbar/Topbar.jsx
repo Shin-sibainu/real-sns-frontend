@@ -26,14 +26,10 @@ export default function Topbar() {
       </div>
       <div className="topbarRight">
         <div className="topbarLinks">
-          <span className="topbarLink">ホーム</span>
-          <span className="topbarLink">タイムライン</span>
+          <span className="topbarLink">トレンド</span>
+          <span className="topbarLink">メッセージ</span>
         </div>
         <div className="topbarIcons">
-          <div className="topbarIconItem">
-            <Person />
-            <span className="topbarIconBadge">1</span>
-          </div>
           <div className="topbarIconItem">
             <Chat />
             <span className="topbarIconBadge">2</span>

@@ -10,7 +10,7 @@ export default function Rightbar({ profile }) {
         <div className="birthdayContainer">
           <img src="assets/gift.png" alt="" className="birthdayImg" />
           <span className="birthdayText">
-            今日は <b>shincode</b>と<b>他3人</b>が誕生日です。
+            <b>フォロワー限定</b>イベント開催中！
           </span>
         </div>
         <img className="rightbarAd" src="assets/ad.png" alt="" />
