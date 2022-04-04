@@ -7,12 +7,15 @@ import {
   Person,
   Search,
 } from "@mui/icons-material";
+import { Link } from "react-router-dom";
 
 export default function Topbar() {
   return (
     <div className="topbarContainer">
       <div className="topbarLeft">
-        <span className="logo">Real SNS</span>
+        <Link to="/" style={{ textDecoration: "none" }}>
+          <span className="logo">Real SNS</span>
+        </Link>
       </div>
       <div className="topbarCenter">
         <div className="searchbar">
@@ -25,10 +28,6 @@ export default function Topbar() {
         </div>
       </div>
       <div className="topbarRight">
-        <div className="topbarLinks">
-          <span className="topbarLink">トレンド</span>
-          <span className="topbarLink">メッセージ</span>
-        </div>
         <div className="topbarIcons">
           <div className="topbarIconItem">
             <Chat />
@@ -38,8 +37,8 @@ export default function Topbar() {
             <Notifications />
             <span className="topbarIconBadge">1</span>
           </div>
+          <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
         </div>
-        <img src="/assets/person/1.jpeg" alt="" className="topbarImg" />
       </div>
     </div>
   );

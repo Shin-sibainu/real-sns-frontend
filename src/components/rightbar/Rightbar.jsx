@@ -4,6 +4,7 @@ import Online from "../online/Online";
 import "./Rightbar.css";
 
 export default function Rightbar({ profile }) {
+  const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
   const HomeRightbar = () => {
     return (
       <>
@@ -57,61 +58,53 @@ export default function Rightbar({ profile }) {
   const ProfileRightbar = () => {
     return (
       <>
-        <h4 className="rightbarTitle">User Infomation</h4>
+        <h4 className="rightbarTitle">ユーザー情報</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">出身:</span>
             <span className="rightbarInfoKey">福岡</span>
           </div>
-          <h4 className="rightbarTitle">User friends</h4>
+          <h4 className="rightbarTitle">あなたの友達</h4>
           <div className="rightbarFollowings">
             <div className="rightbarFollowing">
               <img
-                src="assets/person/1.jpeg"
+                src={PUBLIC_FOLDER + "/person/1.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">田中</span>
+              <span className="rightbarFollowingName">ShinCode</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/2.jpeg"
+                src={PUBLIC_FOLDER + "/person/2.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">鈴木</span>
+              <span className="rightbarFollowingName">Yamaki</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/3.jpeg"
+                src={PUBLIC_FOLDER + "/person/3.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">佐藤</span>
+              <span className="rightbarFollowingName">Koga</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/4.jpeg"
+                src={PUBLIC_FOLDER + "/person/4.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">斎藤</span>
+              <span className="rightbarFollowingName">Matukubo</span>
             </div>
             <div className="rightbarFollowing">
               <img
-                src="assets/person/5.jpeg"
+                src={PUBLIC_FOLDER + "/person/5.jpeg"}
                 alt=""
                 className="rightbarFollowingImg"
               />
-              <span className="rightbarFollowingName">菊川</span>
-            </div>
-            <div className="rightbarFollowing">
-              <img
-                src="assets/person/6.jpeg"
-                alt=""
-                className="rightbarFollowingImg"
-              />
-              <span className="rightbarFollowingName">松窪</span>
+              <span className="rightbarFollowingName">Kikukawa</span>
             </div>
           </div>
         </div>
