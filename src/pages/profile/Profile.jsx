@@ -5,19 +5,23 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Topbar from "../../components/topbar/Topbar";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 export default function Profile() {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
 
   //クエリでusernameを取得してくる。Post.jsから持ってきた。
   const [user, setUser] = useState({});
+  const username = useParams().username;
+  // console.log(params);
 
   useEffect(() => {
     const fetchUser = async () => {
       // const res = await axios.get(`users/${post.userId}`);
       //クエリの取得ができてない。
       // const res = await axios.get("/users?username=shincode");
-      const res = await axios.get("/users?username=shincode");
+      // const res = await axios.get(`/users?username=shincode`);
+      const res = await axios.get(`/users?username=${username}`);
 
       setUser(res.data);
       // console.log(res.data);
@@ -34,12 +38,14 @@ export default function Profile() {
           <div className="profileRightTop">
             <div className="profileCover">
               <img
-                src={PUBLIC_FOLDER + "/post/3.jpeg"}
+                src={user.coverPicture || PUBLIC_FOLDER + "/post/3.jpeg"} //デフォルト画像は決めてない。
                 alt=""
                 className="profileCoverImg"
               />
               <img
-                src={PUBLIC_FOLDER + "/person/1.jpeg"}
+                src={
+                  user.profilePicture || PUBLIC_FOLDER + "/person/noAvatar.png"
+                }
                 alt=""
                 className="profileUserImg"
               />
@@ -52,8 +58,9 @@ export default function Profile() {
             </div>
           </div>
           <div className="profileRightBottom">
-            <Feed username="shincode" />
-            <Rightbar profile />
+            {/* <Feed username="shincode" /> */}
+            <Feed username={username} />
+            <Rightbar user={user} />
           </div>
         </div>
       </div>
