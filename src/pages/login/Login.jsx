@@ -1,13 +1,24 @@
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import "./Login.css";
+import { loginCall } from "../../apiCalls";
+//AuthContextはユーザー状態が入ってる(user, isFetching, error, dispatch)
+import { AuthContext } from "../../context/AuthContext";
 
 export default function Login() {
   const email = useRef();
   const password = useRef();
+  const { user, isFetching, error, dispatch } = useContext(AuthContext);
+
   const handleClick = (e) => {
     e.preventDefault();
-    console.log(email.current.value);
+    // console.log(email.current.value);
+    loginCall(
+      { email: email.current.value, password: password.current.value },
+      dispatch
+    );
   };
+
+  console.log(user); //ユーザーがログインしてる状態ですね！！！
   return (
     <div className="login">
       <div className="loginWrapper">
