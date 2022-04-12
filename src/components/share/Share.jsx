@@ -23,18 +23,25 @@ export default function Share() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     const newPost = {
       userId: user._id,
       desc: desc.current.value,
     };
-
+    if (file) {
+      const data = new FormData();
+      const fileName = Date.now() + file.name;
+      data.append("name", fileName);
+      data.append("file", file);
+      newPost.img = fileName;
+      console.log(newPost);
+      try {
+        await axios.post("/upload", data);
+      } catch (err) {}
+    }
     try {
       await axios.post("/posts", newPost);
       window.location.reload();
-    } catch (err) {
-      console.log(err);
-    }
+    } catch (err) {}
   };
 
   return (
@@ -58,7 +65,11 @@ export default function Share() {
           />
         </div>
         <hr className="shareHr" />
-        <form className="shareButtons" onSubmit={(e) => handleSubmit(e)}>
+        <form
+          className="shareButtons"
+          onSubmit={(e) => handleSubmit(e)}
+          encType="multipart/form-data"
+        >
           <div className="shareOptions">
             <label htmlFor="file" className="shareOption">
               <Image className="shareIcon" htmlColor="blue" />
@@ -69,6 +80,7 @@ export default function Share() {
                 id="file"
                 accept=".png, .jpeg, .jpg"
                 onChange={(e) => setFile(e.target.files[0])}
+                name="file"
               />
             </label>
             <div className="shareOption">
@@ -84,7 +96,9 @@ export default function Share() {
               <span className="shareOptionText">投票</span>
             </div>
           </div>
-          <button className="shareButton">投稿</button>
+          <button className="shareButton" type="submit">
+            投稿
+          </button>
         </form>
       </div>
     </div>
