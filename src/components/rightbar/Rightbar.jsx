@@ -1,10 +1,36 @@
-import React from "react";
+import { Add, Remove } from "@mui/icons-material";
+import axios from "axios";
+import React, { useContext, useEffect, useState } from "react";
+import { AuthContext } from "../../context/AuthContext";
 import { Users } from "../../dummyData";
 import Online from "../online/Online";
 import "./Rightbar.css";
 
 export default function Rightbar({ user }) {
   const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+  const [followed, setFollowed] = useState(false);
+
+  const { user: currentUser, dispatch } = useContext(AuthContext);
+
+  useEffect(() => {
+    setFollowed(currentUser.followings.includes(user?.id));
+  }, [currentUser, user?.id]);
+
+  const handleClick = async () => {
+    try {
+      if (followed) {
+        await axios.put(`/users/${user._id}/unfollow`, {
+          userId: currentUser._id,
+        });
+      } else {
+        await axios.put(`/users/${user._id}/follow`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
+    setFollowed(!followed);
+  };
+
   const HomeRightbar = () => {
     return (
       <>
@@ -58,6 +84,18 @@ export default function Rightbar({ user }) {
   const ProfileRightbar = () => {
     return (
       <>
+        {/* フォロー機能時に追加 */}
+        {user.username !== currentUser.username && (
+          <button
+            className="rightbarFollowButton"
+            onClick={() => handleClick()}
+          >
+            {followed ? "フォローを外す" : "フォロー"}
+            {followed ? <Remove /> : <Add />}
+            {/* フォロー
+            <Add /> */}
+          </button>
+        )}
         <h4 className="rightbarTitle">ユーザー情報</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
